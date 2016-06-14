@@ -1,9 +1,8 @@
 # Site wide configuration
 
-title: Site Title
-locale: en_US
-description: Describe your website here.
-logo: site-logo.png
+title: Fabrício Rissetto
+locale: pt_BR
+description: Desenvolvimento de Software
 search: true
 url: http://fabriciorissetto.github.io
 
@@ -36,15 +35,15 @@ exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.
 
 # Site owner
 owner:
-  name: Your Name
+  name: Fabrício Rissetto
   avatar: bio-photo.jpg
-  email: you@email.com
+  email: fabriciorissetto@gmail.com
   disqus-shortname:
   twitter: #username
-  facebook: #username
-  github: #username
-  stackexchange: #http://stackoverflow.com/users/123456/username
-  linkedin: #username
+  facebook: fabricio.rissetto
+  github: fabriciorissetto
+  stackexchange: stackoverflow.com/users/890890/fabriciorissetto
+  linkedin: fabriciorissetto
   instagram: #username
   flickr: #username
   tumblr: #username
