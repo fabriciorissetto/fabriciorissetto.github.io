@@ -22,7 +22,10 @@
 }
 
 .sidebar .wrap {
-  padding: 110px 0 20px 0;
+  padding: 10px 0 15px 0;
+  @include media($large) {
+    padding: 80px 0 80px 0;
+  }
 }
 /*
    Site logo
@@ -65,6 +68,10 @@
     @include animation-delay(.75s);
   a {
     color: $black;
+    font-size: 34px;
+    @include media($large) {
+      font-size: 36px;
+    }
   }
 }
 

@@ -4,7 +4,7 @@ title: Fabrício Rissetto
 locale: pt_BR
 description: Desenvolvimento de Software
 search: true
-url: http://fabriciorissetto.github.io
+url: http://localhost:4000
 
 # Jekyll configuration
 
@@ -42,7 +42,7 @@ owner:
   twitter: #username
   facebook: fabricio.rissetto
   github: fabriciorissetto
-  stackexchange: stackoverflow.com/users/890890/fabriciorissetto
+  stackexchange: http://stackoverflow.com/users/890890/fabriciorissetto
   linkedin: fabriciorissetto
   instagram: #username
   flickr: #username
