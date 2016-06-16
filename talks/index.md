@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Theme Setup
-excerpt: "Instructions on how to install and customize the Jekyll theme So Simple."
+title: Talks
+excerpt: "Página com minhas apresentações e talks"
 modified: 2016-06-01T14:07:07-04:00
 ---
 
