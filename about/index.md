@@ -15,7 +15,7 @@ Sou um programador full stack e grande adepto de metodologias e práticas agile.
 
 Durante os últimos anos, tenho ganhado experiência com Domain Driven Design, o que tem me ajudado a construir softwares admiravelmente épicos, modéstia à parte.
 
-Como líder, estou continuamente buscando extrair o melhor que cada pessoa (inclusive eu) tem a oferecer. Atuando lado a lado de meus colegas, viso usar minhas habilidades, não só técnicas mas também aquelas adquiridas através da experiência, para identificar variáveis que podem levar o projeto ao fracasso e com isso montar estratégias que evitem esses problemas (ou que ao menos os solucionem). O objetivo é que nada nos impeça de entregar um código de qualidade.
+Como líder, estou continuamente buscando extrair o melhor que cada pessoa (inclusive eu) tem a oferecer. Atuando lado a lado de meus colegas, viso usar minhas habilidades, não só técnicas mas também aquelas adquiridas através da longa vivência em projetos, para rapidamente identificar variáveis que podem levar a problemas e planejar estratégias para evitá-los (ou ao menos solve-los). O objetivo é que nada nos impeça de entregar um código de qualidade.
 
 Em minha carreira, na loucura dos projetos e percalços da vida, já atuei nos papéis de desenvolvedor, analista de sistemas, arquiteto de software e líder de equipes. Já fiz bico com tarefas de testador, gerente e, porque não, o cara que faz o café. Em todas essas tarefas, as que mais me identifiquei, tirando passar café, são as que eu atualmente desempenho: líder e arquiteto. As vezes mais um do que outro dependendo do projeto e da necessidade. 
 

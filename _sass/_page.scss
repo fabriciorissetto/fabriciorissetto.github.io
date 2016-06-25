@@ -39,6 +39,7 @@
 /* tag listing in page header */
 
 .entry-tags {
+	text-align: right;
 	margin: 2em 0 0;
   padding: 0;
 	text-transform: uppercase;
@@ -100,47 +101,6 @@ span + .entry-title {
 	padding-left: $gutter;
 }
 
-/* page/post meta content (date, author, etc) */
-
-.entry-meta {
-	@include span-columns(12);
-	text-transform: uppercase;
-	@include font-size(14);
-	a {
-		color: $text-color;
-	}
-	@include media($large) {
-		@include span-columns(2.5);
-	}
-	& > span {
-		padding: 0 20px 10px 0;
-		display: inline-block;
-		@include media($large) {
-			display: block;
-			padding: 8px 0;
-			border-bottom: 1px solid lighten($black,80);
-			border-bottom: 1px solid rgba($black,.10);
-		}
-	}
-}
-
-/* author avatar (circular) */
-
-.bio-photo {
-	display: none;
-	@include media($large) {
-		display: block;
-		width: 150px;
-		height: 150px;
-		margin-bottom: 10px;
-		@include rounded(150px);
-		@include clearfix;
-	}
-}
-
-
-/* feature image credit */
-
 .image-credit {
   margin: 0 auto;
   max-width: 440px;
@@ -172,10 +132,7 @@ span + .entry-title {
 	@include span-columns(12);
 	p:first-child {
 		margin-top: 0;
-	}
-	@include media($large) {
-		@include span-columns(9.5);
-	}
+	}	
 	/* nice link underlines */
   p > a,
 	li > a {
