@@ -4,8 +4,9 @@ title: Fabrício Rissetto
 locale: pt_BR
 description: Apenas mais um blog random sobre programação
 search: true
-url: http://fabriciorissetto.github.io
-#url: http://localhost:4000
+comments: true
+#url: http://fabriciorissetto.github.io
+url: http://localhost:4000
 
 # Jekyll configuration
 
@@ -39,7 +40,7 @@ owner:
   name: Fabrício Rissetto
   avatar: bio-photo.jpg
   email: fabriciorissetto@gmail.com
-  disqus-shortname:
+  disqus-shortname: fabriciorissetto
   twitter: #username
   facebook: fabricio.rissetto
   github: fabriciorissetto
