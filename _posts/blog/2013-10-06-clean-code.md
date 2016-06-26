@@ -3,11 +3,10 @@ layout: post
 title: "Clean Code - Dicas"
 modified:
 categories: blog
-excerpt: "Dicas de clean code (código limpo) baseadas no livro \"Clean Code\", de Rober Cecil Martin"
+excerpt: ""
 tags: [clean-code]
 image:
   feature:
-date: 2013-10-06T15:39:55-04:00
 date: 2013-10-06T15:39:55-04:00
 ---
 
@@ -22,7 +21,6 @@ Mas enfim, baseado no aprendizado que obtive e no fato de que eu já havia procu
 As dicas que venho a oferecer aqui estão descritas de forma resumida e em sua maioria foram retiradas do livro de [Uncle Bob](https://www.google.com.br/search?q=uncle+bob&aq=f&oq=uncle+bob) citado anteriormente.
 
 Vamos lá...
-
 
 # Variáveis
 
@@ -46,6 +44,8 @@ Exemplo:
 ```javascript
 var lucroLiquidoProduto = valorVendaProduto - valorCustoProduto;
 ```
+
+---
 
 # Código auto explicativo dispensa comentários
 
@@ -101,6 +101,8 @@ Regex regexTelefone = new Regex(@"^\(\d{2}\)\d{4}-\d{4}$"); // (99)9999-9999
 Regex regexCEP = new Regex(@"^\d{5}-\d{3}$"); // 99999-99
 ```
 
+---
+
 # Não usar negação no if se houver um else
 
 Esse é sutil e eu gosto muito. Especialmente porque foi a partir dele que pela primeira vez eu ouvi falar de clean code.
@@ -130,6 +132,8 @@ else
     return "You have not permissions to see this content.";
 ```
 
+---
+
 # Funções/métodos
 
 ### Não usar diferentes níveis de abstração no mesmo método
@@ -149,19 +153,27 @@ Diferentes níveis de abstração no mesmo método podem dificultar o entendimen
 
 Outras dicas rápidas:
 
+---
+
 ### Menor quantidade de parâmetros possíveis no método
 
 Eles dificultam a assinatura. Fazer o teste unitário de um método sem parâmetros pode ser simples, já de um método com um parâmetro nem tanto. Imagine um método com 4 parâmetros, é díficil de fazer um teste unitário que cubra uma grande combinação de possibilidades para esse método.
+
+---
 
 ### Apenas uma responsabilidade por método
 
 Exemplo: Um método chamado CheckPassword não deve validar um login ou iniciar uma sessão, e sim, como o nome diz, apenas informar se a senha é válida ou não.
 
+---
+
 ### Evitar nomes de classes genéricos
 
 Não usar nomes como: Processador ou Gerdenciador. Um nome genérico torna a classe muito abrangente e isso pode gerar confusão quanto a sua responsabilidade, levando os desenvolvedores a incluírem nela métodos que não deveriam estar ali. Já nomes específicos tendem a gerar classes menores e mais organizadas.
 
-Espero que essas dicas tenham sido tão úteis pra você quanto foram pra mim. Aconselho fortemente você a comprar o livro caso deseje ir mais a fundo na saga de tornar um melhor desenvolvedor, lá tem muito mais coisas do que eu falei aqui e explicadas com mais detalhes e embasamento. Encerro esse post com uma linda quote do uncle Bob:
+---
+
+Espero que essas dicas tenham sido tão úteis pra você quanto foram pra mim. Aconselho fortemente você a comprar o livro caso deseje ir mais a fundo na saga de tornar um  desenvolvedor ainda melhor, lá tem muito mais coisas do que eu falei aqui e explicadas com mais detalhes e embasamento. Encerro esse post com uma linda quote do uncle Bob:
 
 > “Tornar seu código legível é tão importante quanto torná-lo executável” 
 >

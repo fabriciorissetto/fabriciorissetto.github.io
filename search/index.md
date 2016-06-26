@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Search"
+title: "Busca no site"
 date: 
 modified:
 excerpt:
@@ -12,14 +12,14 @@ sitemap: false
   
 <!-- Search form -->
 <form method="get" action="{{ site.url }}/search/" data-search-form class="simple-search">
-  <label for="q">Search {{ site.title }} for:</label>
-  <input type="search" name="q" id="q" placeholder="What are you looking for?" data-search-input id="goog-wm-qt" autofocus />
-  <input type="submit" value="Search" id="goog-wm-sb" />
+  <label for="q">Buscar {{ site.title }} for:</label>
+  <input type="search" name="q" id="q" placeholder="O que você está procurando?" data-search-input id="goog-wm-qt" autofocus />
+  <input type="submit" value="Buscar" id="goog-wm-sb" />
 </form>
 
 <!-- Search results placeholder -->
 <h6 data-search-found>
-  <span data-search-found-count></span> result(s) found for &ldquo;<span data-search-found-term></span>&rdquo;.
+  <span data-search-found-count></span> resultado encontrados para &ldquo;<span data-search-found-term></span>&rdquo;.
 </h6>
 <ul class="post-list" data-search-results></ul>
 
