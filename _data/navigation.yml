@@ -3,8 +3,8 @@
 - title: Posts
   url: /blog/
 
-- title: Talks
-  url: /talks/
+# - title: Talks
+#   url: /talks/
 
 - title: Sobre Mim
   url: /about/
