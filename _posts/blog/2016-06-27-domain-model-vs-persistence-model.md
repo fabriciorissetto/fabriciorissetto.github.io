@@ -7,7 +7,7 @@ excerpt: ""
 tags: [DDD]
 image:
   feature:
-date: 2015-06-27T15:39:55-04:00
+date: 2016-06-27T15:39:55-04:01
 ---
 
 ## 1) Persistence and Domain model as the same thing

@@ -28,7 +28,7 @@ Utilizado para consultas. *Se modifica algum recurso no servidor, como banco de 
 | /usuarios	| retorna todos usuários |
 | /usuarios?ativo=true&lastName=Silva | retorna uma lista de usuários ativos com o sobrenome “Silva” |
 
-Observe que o ID principal do recurso é enviado como parte do path (/usuários/{id}), porém para consulta que não é feita através do identificador da entidade os parâmetros de consulta devem ser enviados via querystring (/usuarios?ativo=true&lastName=Silva).
+Observe que o `Id` principal do recurso é enviado como parte do path (`/usuários/{id}`), porém para consulta que não é feita através do identificador da entidade os parâmetros de consulta devem ser enviados via querystring (`/usuarios?ativo=true&lastName=Silva`).
 
 ---
 
@@ -99,5 +99,7 @@ Remove recursos do servidor
 |:---|:---|
 | /usuarios/2 | remove o usuário com ID igual a 2 |
 | /usuarios/2/telefones/1 | remove apenas o telefone com ID “1″ do usuário com ID igual a “2″ |
- 
+
+---
+
 Para casos menos curriqueiros a vezes surge a necessidade de se utilizar status codes mais específicos. Uma regra de ouro que facilita na busca de status codes mais apropriados é que os 4xx são erros do cliente e os 5xx são erros do servidor.
