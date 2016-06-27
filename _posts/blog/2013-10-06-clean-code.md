@@ -4,7 +4,7 @@ title: "Clean Code - Dicas"
 modified:
 categories: blog
 excerpt: ""
-tags: [clean-code]
+tags: [Clean Code]
 image:
   feature:
 date: 2013-10-06T15:39:55-04:00

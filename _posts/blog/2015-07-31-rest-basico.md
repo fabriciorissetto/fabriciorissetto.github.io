@@ -4,7 +4,7 @@ title: "API REST Básico – Rotas, Verbos e Status Codes"
 modified:
 categories: blog
 excerpt: ""
-tags: [rest]
+tags: [REST]
 image:
   feature:
 date: 2015-07-31T15:39:55-04:00

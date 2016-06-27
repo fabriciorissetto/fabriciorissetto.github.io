@@ -5,8 +5,8 @@ locale: pt_BR
 description: Apenas mais um blog random sobre programação
 search: true
 comments: true
-#url: http://fabriciorissetto.github.io
-url: http://localhost:4000
+url: http://fabriciorissetto.github.io
+#url: http://localhost:4000
 
 # Jekyll configuration
 

@@ -4,7 +4,7 @@ title: "Projeto emissor/receptor infravermelho – Arduino"
 modified:
 categories: blog
 excerpt: ""
-tags: [arduino]
+tags: [Arduino]
 image:
   feature:
 date: 2014-11-12T15:39:55-04:00

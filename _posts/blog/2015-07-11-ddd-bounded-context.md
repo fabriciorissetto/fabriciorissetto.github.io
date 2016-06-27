@@ -4,7 +4,7 @@ title: "DDD – Bounded Context"
 modified:
 categories: blog
 excerpt: ""
-tags: [ddd]
+tags: [DDD]
 image:
   feature:
 date: 2015-07-11T15:39:55-04:00
