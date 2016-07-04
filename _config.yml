@@ -10,6 +10,7 @@ url: http://www.fabriciorissetto.com
 
 # Jekyll configuration
 
+future: true
 permalink:   /:categories/:title/
 markdown:    kramdown
 highlighter: rouge
