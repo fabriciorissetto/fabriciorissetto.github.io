@@ -27,7 +27,7 @@ public class Livro
 }
 ```
 
-Com a evolução dos ORM's passou a ser possível fazer essas configurações sem a necessidade do uso de data annotations, através de arquivos que chamamos de `mappings` (tanto Entity Framework como NHibernate possuem interfaces fluent para fazermos esses mapeamentos de forma fácil). Assim conseguimos criar essas classes de persistência de maneira POCO (Plain Old CLR Object), o que é muito mais bonito:
+Com a evolução dos ORM's passou a ser possível fazer essas configurações sem a necessidade do uso de data annotations. Isso é possível devido aos arquivos de `mappings` (normalmente configurados de maneira fluent). Assim conseguimos criar essas classes de persistência de maneira POCO (Plain Old CLR Object), o que é muito mais bonito:
 
 ```c#
 public class Livro 
@@ -38,11 +38,11 @@ public class Livro
 }
 ```
 
-Tendo essa possibilidade virou algo muito comum usar essas classes no domínio das aplicações, ou seja, a mesma classe que é utilizada para modelar a persistência é utilizada também para modelar o domínio.
+Com essa possibilidade acabou virando muito comum usarmos essas classes no domínio das aplicações. Dessa maneira a mesma classe que é utilizada para modelar a persistência é utilizada também para modelar o domínio.
 
 ## Mas o que é um modelo de domínio (domain model)?
 
-São as classes que representam o domínio da sua aplicação. Elas expressam não só dados mas também (e principalmente) comportamentos:
+São as classes que representam o "negócio" da sua aplicação. Elas expressam não só dados mas também (e principalmente) comportamentos:
 
 
 ```c#
@@ -70,9 +70,9 @@ public class Livro
 
 # Mesclar ou não mesclar, eis a questão!
 
-Uma das coisas mais comuns e intuitivas quando iniciando uma aplicação em DDD é mesclar esses dois modelos em um só. Ou seja, você pega aquela classe `Livro` do último exemplo acima (domain model) e mapeia ela em seu ORM. 
+Como dito anteriormente, configurar o ORM sobre as classes de domínio se tornou algo muito comum e intuitivo. Inclusive muitos, se não a maioria, dos exemplos que se vê na internet de projetos em DDD são construídos dessa forma. 
 
-Ela tem métodos que o ORM não vai utilizar (já que para o ORM só interessam as propriedades) mas isso não vai gerar problema algum. Nem mesmo os campos com `private set`, pois os ORMs atribuem os valores das propriedades por reflection.
+Ou seja, você pega aquela classe "Livro" do exemplo anterior (domain model) e mapeia ela em seu ORM. De fato ela tem métodos que ele não vai utilizar (já que para o ORM só interessam as propriedades) mas isso não vai gerar nenhum problema. Nem mesmo os campos com `private set`, pois os ORMs atribuem os valores das propriedades por reflection.
 
 Então a conclusão é: 
 
@@ -84,7 +84,7 @@ Respondi sobre isso [nessa](http://stackoverflow.com/a/34436709/890890) questão
 
 ## Persistence e Domain model numa classe só
 
-Se você está construindo uma aplicação nova na qual se tem o conhecimento de que o domínio dificilmente sofrerá modificações drásticas e se o banco de dados está sendo construído com o único propósito de atender a essa aplicação, provavelmente essa seja a maneira mais prática a se seguir. Entretanto quando maior seja a ambição de vida longa do projeto (em matéria de manutenções e continuidade de desenvolvimento) maior o risco desse approach.
+Se você está construindo uma aplicação nova na qual se tem o conhecimento que o domínio dificilmente será modificado e, além disso, se o banco de dados está sendo construído com o único propósito de atender a essa aplicação: *provavelmente essa seja a maneira mais prática a se seguir*. Entretanto quando maior seja a ambição de vida longa do projeto (em matéria de manutenções e continuidade de desenvolvimento) maior o risco dessa abordagem.
 
 ***Vantagens:***
 
@@ -93,13 +93,13 @@ Se você está construindo uma aplicação nova na qual se tem o conhecimento de
 ***Desvantagens:***
 
 * Os desenvolvedores tendem a ser mais receosos com refatorações e mudanças estruturais no domínio, pois elas afetam diretamente os mapeamentos do ORM. Esse medo não é bom para o domíno.
-* Se o domínio começa a divergir muito do banco de dados certamente surgirão dificuldades para mantê-lo em harmonia com o ORM. Aquela produtividade ganha no início do desenvolvimento começa a se degradar e atingir a ponta da parábola. Quanto mais próximo do domínio mais difícil fica configurar o ORM. Quanto mais próximo do ORM pior fica o domínio.
+* Se o domínio começar a divergir muito do banco de dados certamente surgirão dificuldades para mantê-lo em harmonia com o ORM. Aquela produtividade ganha no início do desenvolvimento começa a se degradar e atingir a ponta da parábola. Quanto mais próximo do domínio mais difícil fica de configurar o ORM. Quanto mais próximo do ORM pior fica o domínio.
 
 ## Persistence e Domain model como duas classes separadas
 
-Essa abordagem traz a principal vantagem de modelar o domínio com liberdade e sem medo de refactorings. Nenhuma limitação proveniente do ORM ou qualquer outro aspecto de persistência dos dados. Ou seja, não importa se o banco de dados é relacional, orientado a documentos, grafos, ou se você salva tudo num arquivo de texto, nada disso afetará a maneira como você modela seu domínio. 
+Essa abordagem traz a principal vantagem de modelar o domínio com liberdade e sem medo de refactorings. Ela está livre de limitações provenientes do ORM ou qualquer outro aspecto de persistência dos dados. Ou seja, não importa se o banco de dados é relacional, orientado a documentos, grafos, ou se você salva tudo num arquivo de texto, nada disso afetará a maneira como você modela seu domínio. 
 
-Eu tendo a sugerir essa separação para projetos utilizam base dados legadas. E, principalemente, para projetos que ambicionam vida longa.  
+Portanto, eu tendo a sugerir essa separação para projetos que utilizam base dados legadas e, principalemente, para projetos que ambicionam vida longa.  
 
 ***Vantagens:***
 
@@ -112,4 +112,4 @@ Eu tendo a sugerir essa separação para projetos utilizam base dados legadas. E
 * Necessidade de um esforço maior nas conversões de dados (mapeamentos) entre as camadas de repositório e domínio. O que resulta em um desenvolvimento um pouco mais trabalhoso e também numa pequena perda (provavelmente desconsiderável) de velocidade em runtime devido a uma conversão extra.
 * Dessa maneira, no final das contas, acabamos perdendo diversos benefícios de utilizar um ORM ([tracking changes](https://msdn.microsoft.com/library/dd456848(v=vs.100).aspx), por exemplo). 
 
-Enfim, essa é a visão que tenho e na qual sempre pondero no momento de conceber a arquitetura das minhas aplicações. 
+Enfim, essa é a visão que tenho e na qual sempre pondero no momento de conceber a arquitetura das minhas aplicações. Sinta-se à vontade para opinar nos comentários.
