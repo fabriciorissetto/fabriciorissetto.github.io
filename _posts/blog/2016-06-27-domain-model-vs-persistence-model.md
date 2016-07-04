@@ -7,7 +7,8 @@ excerpt: ""
 tags: [DDD]
 image:
   feature:
-date: 2016-06-26T15:39:55-04:01
+date: 2016-06-27T15:39:55-04:01
+modified: 2016-07-04T15:39:55-04:01
 ---
 
 ## O que é um modelo de persistência (persistence model)?
