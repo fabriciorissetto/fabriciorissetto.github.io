@@ -67,7 +67,7 @@ O que?! 5 milhões de anos? Mas ela não é mais simples? Não, pois ela é maio
 
 Isso mesmo, [o tamanho torna a senha mais segura do que a complexidade](http://crambler.com/password-security-why-secure-passwords-need-length-over-complexity/). Quanto menor a senha, menor o número de combinações possíveis para um ataque de força bruta. Portanto, quando obrigamos os usuários a escolherem senhas complexas não estamos tornando as senhas mais seguras. Na verdade o efeito é justamente o contrário, quando obrigados a escolherem senhas mais complexas os usuários tendem a criar senhas mais curtas (como `F@brici0`).
 
-> OBS: Há diversas outras variáveis envolvidas quando falamos de segurança de senhas como o   nível de predictibilidade/aleatoriedade de tal.
+> OBS: Há diversas outras variáveis envolvidas quando falamos de segurança de senhas (como o   nível de predictibilidade/aleatoriedade de tal).
 
 O fato é que há diversas maneiras mais efetivas de se defender desse tipo de ataque sem precisar importunar seus usuários. A lista é longa e as soluções variam desde o uso de captchas até *account lockouts*. 
 
