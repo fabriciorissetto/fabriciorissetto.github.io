@@ -45,7 +45,7 @@ Então eu digo: se você está obrigando seu usuário a criar senhas complexas p
 
 Se esse é o objetivo, dê preferência a utilizar um algoritmo de hash melhor (talvez um SHA-2) e, claro, persistir esse hash *"salteado"*.
 
-## Brute Force 
+## Força Bruta 
 
 Talvez você esteja tentando tornar seu software menos suscetível a um ataque de força bruta. Observe que se estamos falando de um sistema web a própria latência intrínseca da conexão HTTP já dificulta gigantescamente (e talvez até inviabilize) um ataque de força bruta. Mas ok, de fato a possibilidade não deve ser descartada. 
 
@@ -74,3 +74,7 @@ O fato é que há diversas maneiras mais efetivas de se defender desse tipo de a
 # Conclusão
 
 O objetivo aqui não é ensinar os meios de se defender desses ataques. Mas sim deixar claro que simplesmente exigir uma maior complexidade nas senhas não é o caminho :)
+
+> **Bonus por ter lido até aqui** 
+> 
+> O pessoal do dropbox mantém o **"[zxcvbn](https://github.com/dropbox/zxcvbn)"**, biblioteca na qual eles descrevem como *"a realistic password strength estimator"*. Ela avalia como **muitíssimo segura** a senha `batatinhaquandonasce` (que não passaria na regra de complexidade de muitas aplicações). A lib atualmente possui implementações nas linguagens: Javascript, Java, Objective-C, Python, Go, Ruby, PHP, C# e Scala. Esse [post](https://blogs.dropbox.com/tech/2012/04/zxcvbn-realistic-password-strength-estimation/) do dropbox a descreve melhor e traz até alguns comparativos interessantes com outros algoritmos.
