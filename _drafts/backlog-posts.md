@@ -1,8 +1,7 @@
 POST BLOG:
-# ParallelProgramming: ThreadPool vs Thread simple and clean responsive Jekyll theme for words and photos
+# ParallelProgramming: ThreadPool vs Thread
 # Angular2: Cadê as diretivas?
 # Web API vs WCF em ambiente corporativo
-# Windows Services vs Console APP + Task Scheduler
 
 # Programador Fashionweek (Falar sobre os devs gostarem de coisa novas e que �mais facil de contatar eles com isso)
 
