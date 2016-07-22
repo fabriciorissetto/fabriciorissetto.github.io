@@ -18,15 +18,15 @@ Algo que frequentemente vejo no ambiente .NET é a utilização de Windows Servi
 
 Minha *rule of thumb* é: 
 
-> Se você não **precisa** usar Windows Service, use Task Scheduler.
+> Se você **não precisa** usar Windows Service, use Task Scheduler.
 
 ### Windows Service
 
 Para tarefas muito recorrentes. Exemplo: uma task que deve ficar infinitamente realizando um processo como chamar uma API pra obter alguma informação. Ou uma task com uma recorrência muito baixa, como de 1 em 1 minuto. Nesse caso, se for usar Windows Service com um "timer" (que roda de tempos em tempos) não faça seu próprio Scheduler "na mão". Utilize frameworks como o [Quarts.NET](http://www.quartz-scheduler.net).
 
-Windows Services no geral são mais poderosos, uma feature que gosto muito é a de poder sobrescerver os eventos de "Start", "Pause" e "Stop". Por exemplo uma aplicação que fique infinitamente (`while (true) { }`) fazendo determinados processos (cálculos, chamdas de APIs, etc), mas que você queira ter a possibilidade de interrmpê-lo *sem que isso seja feito de forma abrupta*. Nesse caso, você pode dar override no evento de "Stop" do Windows Service e criar uma lógica para informá-lo que após a conclusão do processo corrente ele não deve inciar um novo, e sim dar exit.
+Windows Services no geral são mais poderosos, uma feature que gosto muito é a de poder sobrescerver os eventos de *"Start"*, *"Pause"* e *"Stop"*. Por exemplo uma aplicação que fique infinitamente `while (true) { }` fazendo determinados processos (cálculos, chamdas de APIs, etc), mas que você queira ter a possibilidade de interrmpê-lo *sem que isso seja feito de forma abrupta*. Nesse caso, você pode dar override no evento de "Stop" do Windows Service e criar uma lógica para informá-lo que após a conclusão do processo corrente ele não deve inciar um novo, e sim dar exit.
 
-### Console Applicatin + Task Scheduler
+### Console Application + Task Scheduler
 
 Para tarefas não tão recorrentes (como um processo que deve rodar uma vez por dia ou toda terça-feira às 17 horas, por exemplo).
 
