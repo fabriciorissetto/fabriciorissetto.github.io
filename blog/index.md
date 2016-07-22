@@ -10,7 +10,8 @@ search_omit: true
     -webkit-animation-name: none!important;
     -moz-animation-name: none!important;
     -o-animation-name: none!important;
-    animation-name: none!important;    
+    animation-name: none!important;  
+    display: block!important;  
   }
 </style>
 
