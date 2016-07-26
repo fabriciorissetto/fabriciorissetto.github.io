@@ -2,6 +2,7 @@ POST BLOG:
 # ParallelProgramming: ThreadPool vs Thread
 # Angular2: Cadê as diretivas?
 # Web API vs WCF em ambiente corporativo
+# A invasão do paradigma funcional (como isso está vazando para linguagens como C#)
 
 # Programador Fashionweek (Falar sobre os devs gostarem de coisa novas e que �mais facil de contatar eles com isso)
 

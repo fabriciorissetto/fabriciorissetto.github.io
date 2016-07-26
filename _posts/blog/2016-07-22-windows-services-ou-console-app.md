@@ -34,3 +34,5 @@ Para tarefas não tão recorrentes (como um processo que deve rodar uma vez por 
 
 Uma vez tendo uma console application, migrar pra Windows Service não é uma tarefa difícil, principalmente se utilizarmos ferramentas como o [TopShelf](http://topshelf-project.com).
 Outro ponto que muitas pessoas desconhecem é a possibilidade de configurar o Task Scheduler pra rodar a [Console App em uma janela invisível](http://www.howtogeek.com/tips/how-to-run-a-scheduled-task-without-a-command-window-appearing) (completamente em background).
+
+Outro ponto muito interessante é a possibilidade de agendar Console Applications construídas sob o .NET Core, ou com o Mono, no scheduler de outras plataformas além do Windows (como o daemon do Linux, por exemplo).
