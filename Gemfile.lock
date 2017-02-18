@@ -1,5 +1,5 @@
 GEM
-  remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
     addressable (2.4.0)
     colorator (0.1)
@@ -54,4 +54,4 @@ DEPENDENCIES
   jekyll-sitemap
 
 BUNDLED WITH
-   1.12.5
+   1.14.3

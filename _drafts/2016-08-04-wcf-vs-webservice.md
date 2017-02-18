@@ -18,15 +18,3 @@ Não é porque Web API é uma tecnologia mais recente do que WCF que ela seja re
 
 quero dizer queapesar de APIs REST estarem na moda, não quer dizer que não devemos mais fazer Web Services.
 
-É evidente que rest está mais na moda.
-
-
-
-
-
-
-
-![Task Scheduler]({{ site.url }}/images/windows-services-ou-task-scheduler/task-scheduler.png)
-
-[Como agendar uma tarefa no Windows com Task Scheduler?](http://atendimento.redehost.com.br/hc/pt-br/articles/210816987-Agendando-tarefas-no-Windows-Server-2012)
-
