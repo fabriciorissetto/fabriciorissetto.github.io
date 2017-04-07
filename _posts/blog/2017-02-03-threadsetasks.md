@@ -67,7 +67,7 @@ O Thread Pool é uma implementação do framework que visa evitar o overhead da 
 ## Thread
 Ele faz isso porque o processo de criação e destruição de threads é extremamente custoso, envolvendo tarefas como: chamadas de sistema operacional, alocação de um bloco de memória grande, desalocação desse bloco de memória (no momento de matar a thread), etc. 
 
-Além disso há um outro problema relacionado a threads: o conceito de **processamento paralelo na maioria das vezes é uma mentira**. Isso mesmo. Ele existe desde antes de termos processadores multicores. Como? O SO na esmagadora maioria das vezes (em TODAS as vezes para processadores single core) não executa as tarefas em paralelo de fato, ele executa um pouco de uma tarefa, para, executa outra, para, executa outra, para, e assim por diante. O nome dado a esse “para e vai pra outra” é [context switch]( https://en.wikipedia.org/wiki/Context_switch), algo extremamente custoso para a CPU. Quando mais threads, mais context switches. 
+Além disso há um outro problema relacionado a threads: o conceito de **processamento paralelo na maioria das vezes é uma mentira**. Isso mesmo. Ele existe desde antes de termos processadores multicores. Como? O SO na esmagadora maioria das vezes (em TODAS para processadores single core) não executa as tarefas em paralelo de fato, ele executa um pouco de uma tarefa, para, executa outra, para, executa outra, para, e assim por diante. O nome dado a esse “para e vai pra outra” é [context switch]( https://en.wikipedia.org/wiki/Context_switch), algo extremamente custoso para a CPU. Quanto mais threads, mais context switches. 
 
 Mas veja bem, isso não quer dizer que threads são ruins. Na verdade há casos em que é melhor utilizar elas do que a engine do thread pool. 
 
