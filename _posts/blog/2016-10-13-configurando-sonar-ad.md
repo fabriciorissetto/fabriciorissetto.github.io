@@ -10,7 +10,7 @@ image:
 date: 2016-10-13T00:58:56-02:00
 ---
 
-O objetivo do post é simplificar a configuração do [Sonar Qube](https://www.sonarqube.org/) com o Active Directory para quem não estiver familizarizado com o protocolo LDAP. 
+O objetivo do post é faciliar a configuração do [Sonar Qube](https://www.sonarqube.org/) com o Active Directory para quem não estiver familizarizado com o protocolo LDAP. 
 
 Diferente de ferramentas como o Jenkins, Team City e Octopus, a integração do Sonar Qube com o AD é feita de maneira bem artezanal e a configuração varia conforme o ambiente de cada organização.
 
