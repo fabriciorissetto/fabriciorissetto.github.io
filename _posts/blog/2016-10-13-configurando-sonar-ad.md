@@ -56,24 +56,24 @@ Instale o LDAP Browser dentro de uma máquina que esteja no domínio do Active D
 
 Abra ele e crie um novo profiler.
 
-Na configuração do host, clique em "Lookup Servers..." e copie o o domínio principal (YOURCOMPANY.COM no exemplo abaixo) e cole no campo "Host". *OBS: guarde esse domínio que você copiou, ele vai ser útil logo a frente.*
+Na configuração do host, clique em "Lookup Servers..." e copie um dos servidores (pode existir mais de um) que aparecerem na listagem conforme a imagem abaixo e cole no campo "Host". *OBS: guarde esse domínio que você copiou, ele vai ser útil logo a frente.*
 
-![Select Host]({{ site.url }}/images/2017-03-13-ldap/1.png)
+![Select Host]({{ site.url }}/images/2016-10-13-configurando-sonar-ad/1.png)
 
 No próximo passo, pra facilitar, selecione a opção "Currently logged on user" (OBS: é necessário que você esteja logado na máquina com um usuário do AD).
 
 
-![Current Logged User]({{ site.url }}/images/2017-03-13-ldap/2.png)
+![Current Logged User]({{ site.url }}/images/2016-10-13-configurando-sonar-ad/2.png)
 
 Após isso clique em "Finish".
 
 Clique no profile que você criou e em seguida vá para o campo de pesquisa (CTRL + F3). Nesse campo digite o login (na verdade pode ser nome, email, entre outros campos) do usuário que você deseja encontrar. Exemplo:
 
-![Pesquisa por usuário]({{ site.url }}/images/2017-03-13-ldap/3.png)
+![Pesquisa por usuário]({{ site.url }}/images/2016-10-13-configurando-sonar-ad/3.png)
 
 No resultado, selecione o usuário que você encontrou para ver seus atributos de forma detalhada:
 
-![Detalhes usuário]({{ site.url }}/images/2017-03-13-ldap/4.png)
+![Detalhes usuário]({{ site.url }}/images/2016-10-13-configurando-sonar-ad/4.png)
 
 Esses são os atributos do usuário no AD! Vamos utilizar alguns deles pra configurar o Sonar Qube.
 
