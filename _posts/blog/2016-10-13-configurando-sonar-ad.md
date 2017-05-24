@@ -56,7 +56,7 @@ Instale o LDAP Browser dentro de uma máquina que esteja no domínio do Active D
 
 Abra ele e crie um novo profiler.
 
-Na configuração do host, clique em "Lookup Servers..." e copie um dos servidores (pode existir mais de um) que aparecerem na listagem conforme a imagem abaixo e cole no campo "Host". *OBS: guarde esse domínio que você copiou, ele vai ser útil logo a frente.*
+Na configuração do host, clique em "Lookup Servers..." e copie um dos servidores (algo como `YOURCOMPANY.COM:389` - pode existir mais de um) que aparecerem na listagem conforme a imagem abaixo e cole no campo "Host". *OBS: guarde esse domínio que você copiou, ele vai ser útil logo a frente.* 
 
 ![Select Host]({{ site.url }}/images/2016-10-13-configurando-sonar-ad/1.png)
 
