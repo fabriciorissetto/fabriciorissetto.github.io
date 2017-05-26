@@ -12,7 +12,8 @@ date: 2015-07-31T15:39:55-04:00
 
 # GET
 
-Utilizado para consultas. *Se modifica algum recurso no servidor, como banco de dados, envio de e-mail, sessão, etc, não deve ser GET!*
+Utilizado para consultas. 
+*OBS: Chamadas GET não devem produzir "side effects"! Ou seja, não devemos numa chamada GET: modificar algo no banco de dados, enviar e-mails, modificar sessão, etc.*
 
 **Status Codes normalmente retornados**
 
