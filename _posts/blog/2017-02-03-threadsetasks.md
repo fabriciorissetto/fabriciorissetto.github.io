@@ -142,6 +142,6 @@ Entretanto utilizar tasks (mesmo as long running) traz algumas facilidades para 
 4. Exceptions em tasks filhas propagam para tasks pais.
 5. Tasks suportam cancelamento de maneira simples via token de cancelamento.
 
-Sendo assim, é possível utilizar tasks tanto para tarefas tarefas CPU bound quanto Resource bound **contanto que se configure corretamente a opção "LongRunning" para esse segundo caso**.  
+Sendo assim, é possível utilizar tasks tanto para tarefas CPU bound quanto Resource bound **contanto que se configure corretamente a opção "LongRunning" para esse segundo caso**.  
 
 Mas não se esqueça, quando se fala em paralelismo normalmente estamos visando performance. Quando se trata de performance não podemos trabalhar com suposições. Nada melhor do que fazer testes, comparações e análises de comportamento do código para tirar conclusões se a solução está atendendo devidamente ao problema.
