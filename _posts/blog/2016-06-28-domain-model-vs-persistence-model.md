@@ -38,7 +38,7 @@ public class Livro
 }
 ```
 
-Com essa possibilidade acabou virando muito comum usarmos essas classes no domínio das aplicações. Dessa maneira a mesma classe que é utilizada para modelar a persistência é utilizada também para modelar o domínio.
+Acontece que, com essa possibilidade, acabou virando muito comum usarmos essas classes no domínio das aplicações. Dessa maneira a mesma classe que é utilizada para modelar a persistência é utilizada também para modelar o domínio.
 
 ## Mas o que é um modelo de domínio (domain model)?
 
@@ -66,7 +66,7 @@ public class Livro
 }
 ```
 
-> **Domain model** na definição raiz do DDD é na verdade um conceito mais amplo do que isso. Um domain model pode ser representado de outras maneiras além do código, afinal, como o nome já diz é apenas um modelo. Um modelo da solução de um determinado problema. O objetivo de um modelo é representar algo. Orientação a objetos é uma maneira de representar algo, portanto, é uma peça do modelo. 
+> **Domain model**, na definição raiz do DDD, é na verdade um conceito mais amplo do que isso. Um domain model pode ser representado de outras maneiras além do código, afinal, como o nome já diz é apenas um modelo. Um modelo da solução de um determinado problema. O objetivo de um modelo é representar algo. Orientação a objetos é uma maneira de representar algo, portanto, é uma peça do modelo. 
 
 # Mesclar ou não mesclar, eis a questão!
 
