@@ -42,7 +42,7 @@ public class LivroEstaPublicadoSpecification : Specification<Livro>
 {
     public override bool IsSatisfiedBy(Livro livro)
     {
-       return livro.DataRevisao != null && livro.Revisor != null;
+       return livro.DataPublicacao != null && livro.Revisor != null;
     }
 }
 ```
