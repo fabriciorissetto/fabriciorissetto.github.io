@@ -89,7 +89,7 @@ Note que esse segundo item, o de **validação**, não trata sobre o tipo de val
 
 ##### Primeiro: 
 
-As entidades de domínio devem estar sempre em estado válido. Se para um Contrato ser construído é necessário que ele tenha o campo X isso deve ser validado no seu construtor e impedir que a entidade seja criada caso o campo X não seja informado ou esteja incorreto.
+As entidades de domínio devem estar sempre em estado válido. Se para um `Contrato` ser construído é necessário que ele tenha o campo X, isso deve ser validado no seu construtor, de maneira a impedir que a entidade seja criada caso o campo X não seja informado ou esteja incorreto.
 
 Voltando ao exemplo do contrato onde a regra de validação, ao invés de ficar no construtor, foi parar numa Specification. Isso quer dizer que durante um breve momento, após a classe ter sido instanciada e antes do Specification ser utilizado para validá-la, nesse breve momento, alguém pode fazer a seguinte chamada:
 
@@ -136,14 +136,52 @@ Nesses casos o uso de Specification é um golaço, pois não estamos retirando d
 Então, que tal então Specifications como esses:
 
 ```
-CargaNecessitaContainerLimpoSpecification()
 CargaNecessitaContainerResfriadoSpecification()
+CargaNecessitaContainerLimpoSpecification()
 CargaNecessitaContainerLimpoEResfriadoSpecification()  
 CargaNecessitaContainerEstofadoSpecification
 CargaNecessitaContainerBlindadoSpecification()
 ```
 
-No final das contas o uso de specifications, pelo menos nos projetos em que eu tenho atuado, não se faz algo assim "tão comum". Com perdão da cacofonia, o uso de specifications é bem específico e você provavelmente não irá construir um sistema que já na concepção tem uma arquitetura que envolva isso. Ele é algo que irá surgir durante a modelagem, em casos específicos e que provavelmente será claro para todos de que ele é "o padrão" que vai resolver aquele problema. Assim como funciona para todos outros patterns. 
+A implementação simplificada do `CargaNecessitaContainerResfriadoSpecification` poderia algo assim:
+
+```
+public class ContainerPodeLevarCargaResfriadaSpec : Specification<Carga>
+{
+    public Container Container { get; set; }
+
+    public ContainerPodeLevarCargaResfriadaSpec(Container container)
+    {
+        this.Container = container;
+    }
+
+    public bool IsSatisfiedBy(Carga carga)
+    {
+        return Container.Caracterisiticas.CapacidadeTemperaturaMinima <= carga.TemperaturaDeConservacao;
+    }
+}
+```
+
+```
+public class ContainerPodeLevarCargaResfriadaEHigienizadaSpec : Specification<Carga>
+{
+    public Container Container { get; set; }
+
+    public ContainerPodeLevarCargaResfriadaEHigienizadaSpec(Container container)
+    {
+        this.Container = container;
+    }
+
+    public bool IsSatisfiedBy(Carga carga)
+    {
+        return
+            new ContainerPodeLevarCargaResfriadaSpec(Container).IsSatisfiedBy(carga) &&
+            new ContainerPodeLevarCargaHigienizadaSpec(Container).IsSatisfiedBy(carga);
+    }
+}
+```
+
+No final das contas o uso de specifications, pelo menos nos projetos em que eu tenho atuado, não se faz algo assim "tão comum". Com perdão da cacofonia, o uso de specifications é bem específico e você provavelmente não irá construir um sistema que já na concepção tem uma arquitetura que envolva isso. Ele é algo que irá surgir durante a modelagem, em casos específicos e que provavelmente será claro para todos de que ele é "o pettern" que vai resolver aquele problema. Assim como funciona para todos outros patterns. 
 
 Afinal, não começamos o projeto dizendo "Bom, essa pastinha aqui é onde vamos colocar os Strategies, aqui os Builders, nessa os Proxies, e naquela outra os Decorators", não é mesmo? Os patterns se aplicam e se adequam aos projetos e não o contrário.
 

@@ -15,7 +15,7 @@ O Proxy é um padrão de uso relativamente específico, mas que quando bem aplic
 A imagem abaixo, retirada do site [dofactory.com](http://www.dofactory.com/net/proxy-design-pattern), exemplifica de uma maneira ~~que não dá pra entender~~ como o padrão funciona:
 
 <div style="text-align:center">
-  <img style="text-align: center;" src="{{ site.url }}/images/2017-07-21-dynamic-object/proxy-pattern.png">
+  <img style="text-align: center;" src="{{ site.url }}/images/2017-07-21-dynamic-object/proxy-pattern.gif">
 </div>
 
 Mas não esquenta em entender a imagem, eu coloquei ela aqui só pra citar o site dofactory, que é uma ótima referência pro aprendizado de patterns. 
