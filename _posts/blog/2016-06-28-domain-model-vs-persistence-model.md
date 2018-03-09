@@ -66,7 +66,7 @@ public class Livro
 }
 ```
 
-> **Domain model**, na definição raiz do DDD, é na verdade um conceito mais amplo do que isso. Um domain model pode ser representado de outras maneiras além do código, afinal, como o nome já diz é apenas um modelo. Um modelo da solução de um determinado problema. O objetivo de um modelo é representar algo. Orientação a objetos é uma maneira de representar algo, portanto, é uma peça do modelo. 
+> **Domain model**, na definição do DDD, é na verdade um conceito mais amplo do que isso. Um domain model pode ser representado de outras maneiras além do código, afinal, como o nome já diz é apenas um modelo. Um modelo da solução de um determinado problema. O objetivo de um modelo é representar algo. Orientação a objetos é uma maneira de representar algo, portanto, é uma peça do modelo. 
 
 # Mesclar ou não mesclar, eis a questão!
 
@@ -99,7 +99,7 @@ Se você está construindo uma aplicação nova na qual se tem o conhecimento qu
 
 Essa abordagem traz a principal vantagem de modelar o domínio com liberdade e sem medo de refactorings. Ela está livre de limitações provenientes do ORM ou qualquer outro aspecto de persistência dos dados. Ou seja, não importa se o banco de dados é relacional, orientado a documentos, grafos, ou se você salva tudo num arquivo de texto, nada disso afetará a maneira como você modela seu domínio. 
 
-Portanto, eu tendo a sugerir essa separação para projetos que utilizam base dados legadas e, principalemente, para projetos que ambicionam vida longa.  
+Portanto, eu tendo a sugerir essa separação para projetos que utilizam base dados legadas e, principalemente, para projetos que ambicionam vida longa.
 
 ***Vantagens:***
 
@@ -113,3 +113,5 @@ Portanto, eu tendo a sugerir essa separação para projetos que utilizam base da
 * Dessa maneira, no final das contas, acabamos perdendo diversos benefícios de utilizar um ORM ([tracking changes](https://msdn.microsoft.com/library/dd456848(v=vs.100).aspx), por exemplo). 
 
 Enfim, essa é a visão que tenho e na qual sempre pondero no momento de conceber a arquitetura das minhas aplicações. Sinta-se à vontade para opinar nos comentários.
+
+https://vaughnvernon.co/?p=879
