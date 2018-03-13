@@ -12,7 +12,7 @@ date: 2017-07-28T00:58:56-02:00
 
 *Esse post é a parte 2 de 3 tratando sobre arquitetura SOA. No anterior falei de [ESBs](www.fabriciorissetto.com/blog/ESBs/) e contextualizei o cenário SOA antes da hype de microservices. No próximo falarei sobre API Gateways...*
 
-* **Edit:** Como o post ficou muito grande dividi ele em dois. Nessa primeira parte vou focar nas coisas boas e na parte 2 focarei nas dificuldades e pontos de atenção necessários.
+* **Edit:** Como o post ficou muito grande dividi ele em dois. Nessa primeira parte vou focar nas coisas boas e na segunda focarei nas dificuldades e também pontos de atenção necessários ao seguir a abordagem.
 
 ## Mais hype que Game of Thrones...
 
@@ -74,4 +74,8 @@ Isso daqui é a lei de Conway em ação!
 > Any organization that designs a system (defined broadly) will produce a design whose structure is a copy of the organization's communication structure.
 -- Melvyn Conway, 1967
 
-Times completamente diferentes trabalhando na mesma base de código (mesmo repositório) podem enfrentar maiores dificuldades de trabalho conforme essas equipes crescem. Dificuldades como Code Reviews, limitar (e barrar) as responsabilidade por contextos, e até mesmo alguns dos pontos citados anteriormente como dificuldade de deploy. Tudo isso pode afetar a escalabilidade DA EQUIPE e ao mesmo tempo não afetar em nada a escalabilidade aplicação.
+Times completamente diferentes trabalhando na mesma base de código (mesmo repositório) podem enfrentar maiores dificuldades de trabalho conforme suas equipes crescem. Dificuldades de source control, como número excessivo de merges e resolução de conflitos, podem tomar um tempo precioso de desenvolvimento e aumentar o lead time do processo de code review. E não podemos esquecer também de alguns dos pontos que foram citados anteriormente como a dificuldade de deploy. Tudo isso pode afetar a **escalabilidade da equipe** e ao mesmo tempo não afetar em nada a **escalabilidade aplicação**.
+
+#### Mas nem tudo são flores
+
+E por isso separei um post só pros "downsides" de microserviços. Muitos deles tive o prazer de sentir na pele e confesso que não foi uma experiência muito divertida. Confira o post [aqui](). 

@@ -10,11 +10,11 @@ image:
 date: 2017-07-28T00:58:56-02:00
 ---
 
-# Imagem legal
+[take your pills]({{ site.url }}/images/2018-02-13-microservices-parte-2/blue-red-pills.jpg)
 
-No post anterior expliquei o que são microserviços e algumas de suas vantagens. Mas como toda rosa surge com espinhos que devem ser removidos cuidadosamente para você não furar o dedinho da sua pessoa amada, nesse post vou focar nas suas desvantagens e pontos de atenção necessários para desenvolver microserviços sem levar sua empresa a falência nem você ao suicídio.
+No post anterior expliquei o que são microserviços e algumas de suas vantagens. Mas como toda rosa surge com espinhos que devem ser removidos cuidadosamente para você não furar o dedinho da sua pessoa amada, nesse post vou focar nas desvantagens e pontos de atenção necessários para desenvolver microserviços sem levar sua empresa a falência nem você ao suicídio.
 
-Ter uma alta granuralidade de serviços na sua estrutura traz diversos desafios não funcionais como: logs, segurança, monitoramento, conversão de protocolos (caso os serviços utilizem diferentes tipos), etc. Todos esses requisitos normalmente vem junto no pacote do ESB. Embora alguns desses problemas possam ser endereçados também por API Gateways (falo mais no final do post) não ter esse tipo de ferramenta central faz com que tenhamos que nos preocupar com todo esse tooling de forma descentralizada. Isso vem com um custo e não é nada simples. 
+Ter uma alta granuralidade de serviços na sua estrutura traz diversos desafios não funcionais como: logs, segurança, monitoramento, conversão de protocolos (caso os serviços utilizem diferentes tipos), etc. Todos esses requisitos normalmente vem junto no pacote do ESB. Embora alguns desses problemas possam ser endereçados também por API Gateways (falo mais no final do post) não ter esse tipo de ferramenta central faz com que tenhamos que nos preocupar com todo esse tooling de forma descentralizada. Isso vem com um custo e não é nada simples.
 
 Portanto, pense bem antes de entrar nesse mundo e não se deixe enganar apenas pelos pontos positivos que ele irá te trazer. Junto com os benefícios virão dificuldades e é melhor você estrar preparado. Vai demandar estudo
 
@@ -92,3 +92,7 @@ Dependendo da ferramenta de APM pode ser mais caro.
 
 http://www.elemarjr.com/pt/2017/06/entendendo-microservicos/
 
+
+## Conclusão
+
+Toda escolha de design e arquitetura possui seus tradeoffs e com microserviços não é diferente. São muitas as complexidades que você irá introduzir na sua arquitetura ao optar pelo approach de ter uma alta granularidade de serviços. É preciso avaliar os tradeoffs com cautela.
