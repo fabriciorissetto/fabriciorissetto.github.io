@@ -12,11 +12,42 @@ date: 2017-07-28T00:58:56-02:00
 
 [take your pills]({{ site.url }}/images/2018-02-13-microservices-parte-2/blue-red-pills.jpg)
 
-No post anterior expliquei o que são microserviços e algumas de suas vantagens. Mas como toda rosa surge com espinhos que devem ser removidos cuidadosamente para você não furar o dedinho da sua pessoa amada, nesse post vou focar nas desvantagens e pontos de atenção necessários para desenvolver microserviços sem levar sua empresa a falência nem você ao suicídio.
+Toda decisão arquitetural possui tradeoffs e com microserviços não é diferente. Sair do paradigma de uma arquitetura SOA voltada a serviços "encorpados" ou até mesmo migrar de uma estrutura monolítica para microserviços é um caminho complexo e cheio de desafios. Ao mesmo tempo que aconselho cleintes e equipes a seguirem esse caminho em passos curtos, saliento que é exigido uma preparação não trivial que depende em muito da maturidade da arquitetura da empresa e também de suas equipes técnicas. 
 
-Ter uma alta granuralidade de serviços na sua estrutura traz diversos desafios não funcionais como: logs, segurança, monitoramento, conversão de protocolos (caso os serviços utilizem diferentes tipos), etc. Todos esses requisitos normalmente vem junto no pacote do ESB. Embora alguns desses problemas possam ser endereçados também por API Gateways (falo mais no final do post) não ter esse tipo de ferramenta central faz com que tenhamos que nos preocupar com todo esse tooling de forma descentralizada. Isso vem com um custo e não é nada simples.
+Nesse post listo algumas das dificuldades mais comuns que vejo times enfrentarem ao optar pela abordagem de microserviços e também alguns pontos de atenção. Vamos lá.
 
-Portanto, pense bem antes de entrar nesse mundo e não se deixe enganar apenas pelos pontos positivos que ele irá te trazer. Junto com os benefícios virão dificuldades e é melhor você estrar preparado. Vai demandar estudo
+# DevOps
+
+Ter uma alta granuralidade de microserviços heterogêneos numa mesma arquitetura traz diversos desafios não funcionais, tais como logs, segurança, monitoramento, conversão de protocolos (REST/SOAP). Todos esses requisitos normalmente vinham juntos no pacotão do ESB na arquitetura SOA clássica, mas dado os pontos negativos da abordagem (detalhados nos posts anteriores) talvez você esteja querendo evitá-los. Entretanto, não ter esse tipo de ferramenta central faz com que tenhamos que nos preocupar com todo esse tooling de forma descentralizada. Isso vem com um custo, e ele não é barato.
+
+##### Monitoramento e logs
+
+Já pensou em como documentar seus microserviços? 
+* Quantos existem? 
+* Onde eles estão?
+* Qual a topologia de comunicação entre eles? 
+
+E os logs...
+* Quantas requests por hora no serviço X?
+* Quantos erros no serviço Y?
+* Os logs estão centralizados num lugar só? 
+* Eles são padronizados e fáceis de entender?
+
+Resolver esses problemas em uma arquitetura monolítica normalmente é simples. Existem diversas ferramentas de APM que você acopla na sua aplicação e que num passe de mágica disponibilizam esse tipo de visão. Algumas delas: [AppDynamics](https://www.appdynamics.com/), [New Relic](https://newrelic.com/), [DynaTrace](https://www.dynatrace.com/), [Data Dog](https://www.datadoghq.com).
+
+O problema é que muitas dessas ferramentas, aos menos as melhores, são pagas e possuem planos que não são nada atrativos para quem possui um  grande espectro de aplicações e serviços. Por esse e outros motivos muitas equipes utilizam libs descentralizadas em conjunto com algumas ferramentas para prover esse tipo de visão. Algumas dessas ferramentas: [Graphite](http://graphite.readthedocs.org/en/latest/), [Logstash](https://github.com/logstash/logstash-logback-encoder), [Kibana](https://www.elastic.co/guide/en/kibana/current/xpack-monitoring.html), [Grafana](https://grafana.com), [Prometheus](https://prometheus.io/). **USAR SÓ FERRAMENTAS OPEN SOURCE E SEPARAR FERRAMENTAS / LIBS**
+
+##### Automação de infraestrutura
+
+Suas ferramentas de integração e deploy contínuo devem ser preparadas para essa maior gama de aplicações/serviços. Não só preparadas para suportar mas também prover a adição de novas aplicações com facilidade. Se a configuração de sua infraestrutura automatizada é muito "manual", isso será um slowdown na criação de novos microserviços e a longo prazo a soma desse setup todo pode ser demasiado custoso.
+
+Além da integração contínua, não se esqueça que o setup do ambiente de desenvolvimento também deve ser ágil. Porque configurar um monolito na máquina de cada desenvolvedor pode até não ser tão custoso. Mas configurar múltiplas aplicações na qual o time depende para desenvolver e testar uma funcionalidade não é nada divertido, muito menos barato. Containers em conjunto com ferramentas como o [Docker Swarm](https://github.com/docker/swarm) ou [Docker Compose](https://docs.docker.com/compose/) ajudam muito nesse quesito.
+
+##### Segurança e autenticação
+
+Um monolíto normalmente sabe se autenticar sozinho, ou seja, a autenticação está lá e é apenas ele quem a utiliza. Porém, se você começa a migrar para uma estrutura de microserviços é fortemente recomendado que você construa um serviço especialista nisso (normalmente autenticação + autorização) e que esse serviço seja bem resiliente, pois diversas outras aplicações vão depender dele. 
+
+Outra dica válida aqui é: não construa isso do zero! Utilize algum framework de mercado que possua uma forte comunidade em volta, existem vários desse tipo que são open source e gratuítos como o [Identity Server](http://identityserver.io/), por exemplo. Não reinvente a roda.
 
 # Coisas a se pensar 
 
@@ -63,35 +94,16 @@ Fica dificil evoluir os serviços sem um versionamento de API. O versionamento d
   SOAP pra comunicação interna
   REST é de fato o mais utilizado (isso por sí só poderia ser um post)
 
-##### Infrastructure Automation
-
-Integração contínua, entrega contínua (teste e deploy), Docker,
-(ambiente desenvolvimento)
-
 ##### As boundaries nem sempre estão claras
 botar isso?
 
 ##### Dependência entre serviços
 Quanto maior a dependência entre seus serviços mais a vantagem de "deploy independente" se esvai. 
 
-##### Ferramentas de monitoramento e logs
-Common mistakes microservices
-    ESBs resolviam requisitos não funcionais como "Autenticação, monitoramento, logs centaliazdos, mediação"
 
-* Com microservices esses requisitos não funcionais muitas vezes são negligenciados.
+##### [API Gateway](http://www.elemarjr.com/pt/2017/06/entendendo-microservicos/) (que podemos dizer que é uma versão renomeada e "lightweight" dos antigos ESBs)
 
-multiplos bancos de dados e transações pode ser doloroso
-
-* Documentação dos serviços existentes (onde encontrar?)
-* Monitoramento. Os serviços estão distribuídos, ótimo! Mas qual a topologia de comunicação entre eles? Quantas requests por dia pro serviço X? Quantos erros no serviço Y?
-* Log de erros individuais e centralizados
-
-Dependendo da ferramenta de APM pode ser mais caro.
-
-# Api Gateway (outro post?)
-
-http://www.elemarjr.com/pt/2017/06/entendendo-microservicos/
-
+### multiplos bancos de dados e transações pode ser doloroso
 
 ## Conclusão
 
