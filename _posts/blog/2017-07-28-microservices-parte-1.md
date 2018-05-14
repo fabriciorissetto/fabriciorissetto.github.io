@@ -76,4 +76,4 @@ Times completamente diferentes trabalhando na mesma base de código (mesmo repos
 
 #### Mas nem tudo são flores
 
-E por isso separei um post só pros "downsides" de microserviços. Muitos deles tive o prazer de sentir na pele e confesso que não foi uma experiência muito divertida. Confira o post [aqui](www.fabriciorissetto.com/blog/ddd-bounded-context/microservices-parte-2).
+E por isso separei um post só pros "downsides" de microserviços. Muitos deles tive o prazer de sentir na pele e confesso que não foi uma experiência muito divertida. Confira o post [aqui](/blog/microservices-parte-2).
