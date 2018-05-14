@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Microservices (parte 2): Dificuldades e problemas"
+title: "Microservices (parte 2): Benefícios"
 modified:
 categories: blog
 excerpt: ""
