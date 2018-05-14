@@ -12,9 +12,9 @@ date: 2018-05-13T00:58:56-02:00
 
 Faz um certo tempo que despertei o interesse por programação funcional, afinal com o Hype de linguagens funcionais quem ainda não despertou não é mesmo? Confesso que **XXXXXX** Mas uma coisa que eu ainda estava sentindo falta antes de conhecer Kotlin era a união dos dois mundos `FP` e `OOP` de maneira "harmônica".
 
-**Haskell** é uma linguagem puramente funcional e é o que normalmente se indica para aprendizado do paradigma. Acho que faz todo sentido aprender um novo paradigma numa linguagem que não te dê espaço para fugir dele. Para programar em Haskell você é obrigado a pensar "funcionalmente". Isso é uma escolha da linguagem. Haskell se sai bem como uma linguagem puramente funcional e não tem um grande espaço no mercado corporativo justamente por não ser *"general purpose"*. **Smalltalk** teve um papel parecido na história. É uma linguagem puramente orientada à objetos e foi a grande responsável por popularizar o paradigma, que posteriormente foi incorporado por outras linguagens que até então eram basicamente imperativas. 
+**Haskell** é uma linguagem puramente funcional e é o que normalmente se indica para aprendizado do paradigma. Acho que faz todo sentido aprender um novo paradigma numa linguagem que não te dê espaço para fugir dele. Para programar em Haskell você é obrigado a pensar "funcionalmente". Isso é uma escolha da linguagem. Haskell se sai bem como uma linguagem puramente funcional e não tem um grande espaço no mercado corporativo justamente por não ser *"general purpose"*. **Smalltalk** teve um papel parecido na história. É uma linguagem puramente orientada à objetos e foi a grande responsável por popularizar o paradigma, que posteriormente foi incorporado por outras linguagens que até então eram basicamente imperativas.
 
-No entando, mesmo essas novas linguagens se dizendo "multiparadigmas" elas normalmente favorecem a um dos lados.  
+No entando, mesmo essas novas linguagens se dizendo "multiparadigmas" elas normalmente favorecem a um dos lados.
 
 
 <div style="text-align:center">
@@ -35,7 +35,7 @@ data class Address(val street: String,
 Agora uma Entidade, mutável:
 
 ```java
-class Person(val name: String, val address: Address) {
+class Person(var name: String, var address: Address) {
     val id = UUID.randomUUID() //nativo do java
 
     fun sayName() {
