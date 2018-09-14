@@ -10,27 +10,9 @@ image:
 date: 2017-07-28T00:58:56-02:00
 ---
 
-# Porque você precisa de CQRS na sua aplicação?
-Post simples e ao mesmo tempo ótimo.
-
-# Microservices VS ESBs
-
-Common mistakes microservices
-    ESBs resolviam requisitos não funcionais como "Autenticação, monitoramento, logs centaliazdos, mediação"
--> Com microservices esses requisitos não funcionais muitas vezes são negligenciados.
--> Documentação dos serviços existentes (onde encontrar?)
--> Monitoramento. Os serviços estão distribuídos, ótimo! Mas qual a topologia de comunicação entre eles? Quantas requests por dia pro serviço X? Quantos erros no serviço Y?
--> Log de erros individuais e centralizados
-
-# Web API vs WCF em ambiente corporativo
-
-# Service Discovery: Uma necessidade para microservices
-
-# A invasão do paradigma funcional (como isso está vazando para linguagens como C#)
-
 # Programador Fashionweek (Falar sobre os devs gostarem de coisa novas e que �mais facil de contatar eles com isso)
 
-# Programação assíncrona 
+# Programação assíncrona
 https://msdn.microsoft.com/en-us/magazine/jj991977.aspx
 (e depois de estudar responder essa pergunta: http://stackoverflow.com/questions/38150804/how-can-i-implement-async-methods-in-n-layer-or-ddd-net)
 
