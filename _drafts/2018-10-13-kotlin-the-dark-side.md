@@ -12,6 +12,9 @@ date: 2018-10-13T00:58:56-02:00
 
 ## Kotlin: the dark side
 
+
+# Inline é gambeta
+
 #### Type erasing:
 Bizarro como ainda sim a linguagem tem gambetas devido a limitações da JVM, type erasing por exmeplo, resulta em diversas limitações pro kotlin como reified
 E tbm nao poder fazer tipo genérico e não genérico ao mesmo tempo.

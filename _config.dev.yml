@@ -1,3 +1,5 @@
+#  jekyll serve -D --config _config.dev.yml
+
 # Site wide configuration
 
 title: Fabrício Rissetto
@@ -5,18 +7,18 @@ locale: pt_BR
 description: Apenas mais um blog random de programação
 search: true
 comments: true
+#url: http://www.fabriciorissetto.com
 url: http://localhost:4000
 
 # Jekyll configuration
 
-show_drafts: true
 future: true
 permalink:   /:categories/:title/
 markdown:    kramdown
 highlighter: rouge
 sass:
   sass_dir: _sass
-  style: full
+  style: compressed
 gems:
   - jekyll-sitemap
   - jekyll-gist
@@ -49,7 +51,7 @@ owner:
   linkedin: fabriciorissetto
   instagram: #username
   flickr: #username
-  tumblr: #username 
+  tumblr: #username
   pinterest: #username
   weibo: #userid
   google:
