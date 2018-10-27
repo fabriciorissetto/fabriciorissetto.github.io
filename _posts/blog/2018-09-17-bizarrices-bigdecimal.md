@@ -23,7 +23,7 @@ Veja o resultado da operação abaixo:
 
 Isso é o comum na maioria das linguagens devido a incapacidade de representar [alguns números decimais em binário](http://cs.furman.edu/digitaldomain/more/ch6/dec_frac_to_bin.htm).
 
-Em Java, ou melhor, no munto JVM (Kotlin, Scala, etc),é muito comum achar em [respostas](https://stackoverflow.com/a/3413493/890890) do StackOverflow a recomendação de se utilizar o `BigDecimal`
+Em Java, ou melhor, no munto JVM (Kotlin, Scala, etc), é muito comum achar em [respostas](https://stackoverflow.com/a/3413493/890890) do StackOverflow a recomendação de se utilizar o `BigDecimal`
 para esse tipo de operação. No entanto ao passar um `double` como parâmetro para um BigDecimal você continua com o mesmo problema:
 
 ```java
