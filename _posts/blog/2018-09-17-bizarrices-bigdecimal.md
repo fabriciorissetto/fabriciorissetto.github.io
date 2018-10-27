@@ -10,36 +10,37 @@ image:
 date: 2018-09-17T00:58:56-02:00
 ---
 
-Nesse rápido post não pretendo entrar em muitos detalhes técnicos por trás das características dos valores de ponto flutuante, pois é bem simples de achar em respostas como [essa](https://stackoverflow.com/a/1661313/890890) no StackOverflow que dão um ótimo "deep dive" na explicação científica por trás de pontos flutuantes na representação binária em geral.
-
-Portanto vou resumidamente compartilhar alguns aprendizados que tive com meu recente contato com a JVM utilizando Kotlin, focando em exemplos de código.
-
+O propósito desse post é ser rápido, portanto não pretendo entrar em muitos detalhes teóricos por trás das características dos valores de ponto flutuante na JVM, pois é bem simples de achar em respostas como [essa](https://stackoverflow.com/a/1661313/890890) no StackOverflow que dão um ótimo "deep dive" na explicação científica por trás de pontos flutuantes na representação binária em geral.
 
 ### E lá vamos nós
 
-Fazer operações utilizando floats e doubles na JVM resulta em valores não arredondados como no seguinte exemplo:
+Veja o resultado da operação abaixo:
 
 ```java
 0.1 + 0.2
 //0.30000000000000004
 ```
 
-Então é muito comum achar em [respostas](https://stackoverflow.com/a/3413493/890890) do StackOverflow a recomendação de utilizar o `BigDecimal`
-para essas operações:
+Isso é o comum na maioria das linguagens devido a incapacidade de representar [alguns números decimais em binário](http://cs.furman.edu/digitaldomain/more/ch6/dec_frac_to_bin.htm).
+
+Em Java, ou melhor, no munto JVM (Kotlin, Scala, etc),é muito comum achar em [respostas](https://stackoverflow.com/a/3413493/890890) do StackOverflow a recomendação de se utilizar o `BigDecimal`
+para esse tipo de operação. No entanto ao passar um `double` como parâmetro para um BigDecimal você continua com o mesmo problema:
 
 ```java
 BigDecimal(0.1) + BigDecimal(0.2)
 //0.3000000000000000166533453693773481063544750213623046875
 ```
 
-Ué!? Mas deu uma coisa zuada também! Claro, você ainda não tinha descoberto a segunda dica da comunidade, a de construir o BigDecimal utilizando o construtor que recebe uma `String`:
+Isso acontece porque o `double` já perdeu a precisão exata antes mesmo do `BigDecimal` ter sido construído. E aí as coisas começam a ficar estranhas pra quem nunca trabalhou com `BigDecimal`, pois logo você descobre que utilizando o construtor que recebe uma `String` tudo funciona como o esperado:
 
 ```java
 BigDecimal("0.1") + BigDecimal("0.2")
 //0.3
 ```
 
-***Aeeee! Finalmente. Agora sabemos fazer cálculos com números reais na JVM! Bora fazer uns testes de unidade:***
+***Aeeee! Finalmente. Agora o BigDecimal funciona com suas completas capacidades e com precisão exata (sem a treta dos pontos flutuantes reprentados em binário).***
+
+Mas algumas outras coisas podem intrigar você logo em seguida:
 
 ```java
 BigDecimal("0") shouldEqual BigDecimal("0.0")
@@ -57,7 +58,7 @@ Agora foi. Eita...
 
 ## Precisão interna do BigDecimal
 
-Isso acontece pois o BigDecimal possui internamente uma informação de **precisão**. BigDecimals inciados com o construtor Double contendo os valores `0` e `0.0` possuem ambos unidade **0** e escala **0**. Já BigDecimal inciados com o cosntrutor String contendo os valores `"0"` e `"0.0"` possuem a unidade **0** mas o segundo possui escala **1**! Por isso a igualdade resulta em falso.
+Isso acontece porque o BigDecimal possui internamente uma informação de **precisão**. BigDecimals inciados com o construtor Double contendo os valores `0` e `0.0` possuem ambos unidade **0** e escala **0**. Já BigDecimals inciados com o cosntrutor String contendo os valores `"0"` e `"0.0"` possuem a unidade **0** mas o segundo possui escala **1**! Por isso a igualdade resulta em falso.
 
 Se você utilizar, ao invés do `equals()`, o `compareTo()`, a comparação ignora a diferença de precisão.
 
@@ -68,15 +69,14 @@ BigDecimal("0").compareTo(BigDecimal("0.0"))
 
 ## A importância da precisão para as operações
 
-O cálculo `1 / 3` resulta em uma [dizima periodica](https://pt.wikipedia.org/wiki/D%C3%ADzima_peri%C3%B3dica). Com double o resultado é limitado pela sua precisão pré-definida:
+O cálculo `1 / 3` resulta em uma [dízima periodica](https://pt.wikipedia.org/wiki/D%C3%ADzima_peri%C3%B3dica). Com double o resultado é limitado pela sua precisão pré-definida:
 
 ```java
 1.0 / 3.0
 //0.3333333333333333
 ```
 
-Já com BigDecimal, se você não definir a precisão que você deseja, a expressão `1 / 3` dá erro:
-
+Já com BigDecimal, se você não definir a precisão que deseja, a expressão `1 / 3` dá erro (o que faz todo sentido):
 
 ```java
 BigDecimal(1.0).divide(BigDecimal(3.0))

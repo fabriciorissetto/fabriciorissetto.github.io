@@ -12,7 +12,6 @@ date: 2018-10-13T00:58:56-02:00
 
 ## Kotlin: the dark side
 
-
 # Inline é gambeta
 
 #### Type erasing:
@@ -24,6 +23,10 @@ E tbm nao poder fazer tipo genérico e não genérico ao mesmo tempo.
 #### Não ter suporte pra dynamic
 
 #### Não ter Higher-Kinded Types
+
+#### Não possui phantom types
+
+#### Não possui implicit operator
 
 #### BigDecimal
 
