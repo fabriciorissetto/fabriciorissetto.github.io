@@ -10,7 +10,7 @@ image:
 date: 2018-10-13T00:58:56-02:00
 ---
 
-## Kotlin: the dark side
+## Kotlin: features that I miss
 
 # Inline é gambeta
 
@@ -30,3 +30,7 @@ E tbm nao poder fazer tipo genérico e não genérico ao mesmo tempo.
 
 #### BigDecimal
 
+#### Data class nao pode ser herdado
+
+Nothing + out (falar como é feito o Option do Kotlin)
+https://blog.kotlin-academy.com/kotlins-nothing-its-usefulness-in-generics-5076a6a457f7

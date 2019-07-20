@@ -4,7 +4,7 @@ title: "Bizarrices de números reais na JVM"
 modified:
 categories: blog
 excerpt: ""
-tags: [Kotlin]
+tags: [Kotlin, Linguagens de Programação]
 image:
   feature:
 date: 2018-09-17T00:58:56-02:00

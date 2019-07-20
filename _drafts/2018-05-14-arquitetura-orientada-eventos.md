@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Arquitetura orientada a eventos com Kafka: NÃO FAÇA!"
+title: "Arquitetura orientada a eventos com Kafka: Evite!"
 modified:
 categories: blog
 excerpt: ""

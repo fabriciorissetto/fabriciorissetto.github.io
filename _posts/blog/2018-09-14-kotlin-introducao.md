@@ -4,7 +4,7 @@ title: "Kotlin: Introdução a algumas das principais features da linguagem"
 modified:
 categories: blog
 excerpt: ""
-tags: [Kotlin]
+tags: [Kotlin, Linguagens de Programação]
 image:
   feature:
 date: 2018-09-14T00:58:56-02:00
@@ -73,7 +73,7 @@ public final class Animal {
 }
 ```
 
-Muito menos verboso, não é mesmo? Durante a migração de um dos nossos projetos de Ruby para Kotlin conseguimos diminuir quase pela metade a quantidade de linhas de código.
+Muito menos verboso, não é mesmo? Durante a migração de um dos nossos projetos de Ruby para Kotlin conseguimos diminuir quase pela metade a quantidade de linhas de código. Nunca se esqueça: quanto mais boilerplate você escreve, mais brechas para bugs você abre, mais código você tem para testar, mais código você tem para ser lido (por você e pelos seus colegas) e mantido. Complexidade, seja lá de qual forma se manifeste, [é custo](https://www.elemarjr.com/pt/2018/02/complexidade-e-custo/).
 
 **Observação**: Ambos `val` e `var` podem ser utilizados tanto em classes normais `class` quanto em classes de dados `data class`. As pessoas normalmente entendem o `data class` como sendo por si só uma classe imutável, quando na verdade o que garante que seus campos não sejam modificados é o uso de atributos do tipo `val`. O `data class` por si só apenas facilita a criação do construtor, método `equals()` e etc (como citado anteriormente).
 

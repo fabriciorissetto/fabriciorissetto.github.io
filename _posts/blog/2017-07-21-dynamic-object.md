@@ -4,7 +4,7 @@ title: "Proxy Pattern e Proxies dinâmicos em .NET com DynamicObject"
 modified:
 categories: blog
 excerpt: ""
-tags: [.NET,Patterns]
+tags: [.NET,Patterns, Linguagens de Programação]
 image:
   feature:
 date: 2017-07-21T00:58:56-02:00
@@ -18,13 +18,13 @@ A imagem abaixo, retirada do site [dofactory.com](http://www.dofactory.com/net/p
   <img style="text-align: center;" src="{{ site.url }}/images/2017-07-21-dynamic-object/proxy-pattern.gif">
 </div>
 
-Mas não esquenta em entender a imagem, eu coloquei ela aqui só pra citar o site dofactory, que é uma ótima referência pro aprendizado de patterns. 
+Mas não esquenta em entender a imagem, eu coloquei ela aqui só pra citar o site dofactory, que é uma ótima referência pro aprendizado de patterns.
 
 Portanto, vou explicar o padrão com um exemplo real em que pude aplicá-lo recentemente. Vamos lá.
 
 ## O Problema: Parte 1
 
-Imagine um **job**, que em .NET poderia ser até mesmo uma Console Application, no qual é executado de forma recorrente para fazer determinadas tarefas no banco de dados durante a madrugada. Porque na madrugada? Poruqe essas tarefas são pesadas e causariam uma lentidão nos sistemas que dependem desse banco de dados. Esse job possui algumas **configurações** como, o horário que deve iniciar a execução, horário de parada, intervalo de tempo em que deve ficar parado (Idle) entre uma execução e outra, etc. 
+Imagine um **job**, que em .NET poderia ser até mesmo uma Console Application, no qual é executado de forma recorrente para fazer determinadas tarefas no banco de dados durante a madrugada. Porque na madrugada? Poruqe essas tarefas são pesadas e causariam uma lentidão nos sistemas que dependem desse banco de dados. Esse job possui algumas **configurações** como, o horário que deve iniciar a execução, horário de parada, intervalo de tempo em que deve ficar parado (Idle) entre uma execução e outra, etc.
 
 Um trecho de código bem escrito vale mais que mil palavras, então vamos fazer o esboço disso.
 
@@ -42,7 +42,7 @@ public class Job
 
 *Detalhe: Esses exeplos de código seguem uma versão simplificada por questões didáticas. A classe acima poderia ser abstrata bem como os modificadores de acesso de suas propriedades serem mais restritivos, o Config por exemplo, poderia ter o set privado e ser atribuído durante a construção da classe.*
 
-Os dados de configuração do job estão na classe **Config**: 
+Os dados de configuração do job estão na classe **Config**:
 
 ```csharp
 public class Config
@@ -82,7 +82,7 @@ Até aí tudo bem. Agora imagine que temos diversos Jobs como esse executando, t
 
 > No fim de semana os jobs deverão rodar durante o dia também (e não somente de madrugada), além disso o intervalo entre uma parada e outra deverá ser menor. Para atender isso gostaríamos que os jobs obedecessem um config diferente durante os finais de semana. Ou seja, os valores de StartTime, EndTime, IdleInterval, e qualquer outro, poderiam ser diferentes no sábado e domingo.
 
-Existem diversas maneiras de atender isso, uma das mais elegantes é utilizando um Proxy. Enfim chegamos a ele! 
+Existem diversas maneiras de atender isso, uma das mais elegantes é utilizando um Proxy. Enfim chegamos a ele!
 
 ## Solução 1: Proxy Pattern
 
@@ -93,7 +93,7 @@ public class ConfigProxy
     private Config ConfigWeekend { get; set; }
 
     public ConfigProxy(Config configWeekdays, Config configWeekend) { /* */ }
-    
+
     private Config CurrentConfig
     {
         get
@@ -138,7 +138,7 @@ class Program
 {
     public void Main()
     {
-        var job = new JobImportacaoExcel(); 
+        var job = new JobImportacaoExcel();
 
         if (job.Config.Enabled)
         {
@@ -155,11 +155,11 @@ class Program
 
 ## Solução 2: Proxy dinâmico utilizando DynamicObject
 
-Apesar da solução apresentada ser bacana e simples de entender (isso é imporantíssimo), o que aconteceria se uma nova propriedade ou método fosse criado dentro da classe real `Config`? 
+Apesar da solução apresentada ser bacana e simples de entender (isso é imporantíssimo), o que aconteceria se uma nova propriedade ou método fosse criado dentro da classe real `Config`?
 
 O resultado é que esses membros não seriam refletidos no nosso proxy (`ConfigProxy`) até que alguém fosse lá e manualmente tratasse esses novos campos.
 
-Para evitar essa reescrita dentro do `ConfigProxy` poderíamos utilizar um recurso do framework chamado [DynamicObject](https://msdn.microsoft.com/en-us/library/system.dynamic.dynamicobject.aspx). 
+Para evitar essa reescrita dentro do `ConfigProxy` poderíamos utilizar um recurso do framework chamado [DynamicObject](https://msdn.microsoft.com/en-us/library/system.dynamic.dynamicobject.aspx).
 
 Vejam só que bacana:
 
@@ -201,7 +201,7 @@ Feito isso, apenas teríamos que modificar a classe Job para tratar a propriedad
 public class Job
 {
     //A instância seria do tipo DynamicConfigProxy (sendo setada via contrutor - que foi omitido dos exemplos por questão de legibilidade)
-    public dynamic Config { get; set; } 
+    public dynamic Config { get; set; }
 
     public void Execute()
     {
@@ -217,7 +217,7 @@ class Program
 {
     public void Main()
     {
-        var job = new JobImportacaoExcel(); 
+        var job = new JobImportacaoExcel();
 
         if (job.Config.Enabled)
         {
@@ -246,7 +246,7 @@ public class ChatHub : Hub
 }
 ```
 
-Aquela propriedade `All` é um DynamicObject e o `addNewMessageToPage()` é a função que você quer que seja chamada no JavaScript de seus clients conectados no Hub. 
+Aquela propriedade `All` é um DynamicObject e o `addNewMessageToPage()` é a função que você quer que seja chamada no JavaScript de seus clients conectados no Hub.
 
 ## Outras maneiras de criar Proxies Dinâmicos (Solução 3)
 
