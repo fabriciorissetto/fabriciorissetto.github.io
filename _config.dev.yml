@@ -4,7 +4,7 @@
 
 title: Fabrício Rissetto
 locale: pt_BR
-description: Apenas mais um blog random de programação
+description: Devaneios sobre desenvolvimento e arquitetura de software
 search: true
 comments: true
 #url: http://www.fabriciorissetto.com
@@ -49,7 +49,7 @@ owner:
   github: fabriciorissetto
   stackexchange: http://stackoverflow.com/users/890890/fabriciorissetto
   linkedin: fabriciorissetto
-  instagram: #username
+  instagram: fabriciorissetto
   flickr: #username
   tumblr: #username
   pinterest: #username

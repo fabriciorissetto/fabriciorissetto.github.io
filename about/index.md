@@ -5,18 +5,12 @@ excerpt: "Sobre Fabrício Rissetto"
 modified: 2016-06-19T19:44:38.564948-04:00
 ---
 
-Olá! Como você já deve ter observado pelo nome do blog, eu me chamo **Fabrício Rissetto**. Sou um cara apaixonado por tecnologia e determinado a entregar um trabalho de qualidade. Atualmente trabalho como líder técnico e arquiteto na [CWI Software](http://cwi.com.br/) de São Leopoldo - RS. 
+Sou um desenvolvedor com grande experiência em desenvolvimento web e arquiteturas distribuídas. Tendo trabalhado boa parte da minha carreira na stack .NET, fui reconhecido ao longo desses anos de atuação na stack como referência técnica para colegas e membros da comunidade no qual tive contato, participando da coordenação de meetups, palestrando em diversos eventos pelo Brasil, como o TDC e .NET Conf e dando aula sobre o assunto num renomado programa de [trainee](https://crescer.cwi.com.br/) para programadores do RS.
 
-Tenho grande experiência com desenvolvimento web, tendo trabalhado boa parte da minha carreira na stack .NET. Porém, não me limito somente a tecnologias Microsoft. Sou ambicioso e estou sempre buscando aprender novas ferramentas e tecnologias a fim de estar pronto para avaliar e tomar decisões sobre quais aplicar em cada solução.
+Nos últimos anos decidi sair da minha zona de conforto e trabalhar com linguagens de stacks completamente diferentes, sendo as principais Ruby e mais recentemente Kotlin.
 
-Sou um programador full stack e grande adepto de metodologias e práticas ágeis. Dito isso, minhas principais skills como desenvolvedor residem em OO design e arquitetura de sistemas. Também me considero um evangelista de diversas práticas de engenharia de software.
+Em minha carreira, na loucura dos projetos e percalços da vida, já atuei nos papéis de desenvolvedor, analista de sistemas, arquiteto de software e líder de equipes. Já fiz bico com tarefas de testador, gerente e, porque não, o cara que faz o café. Em todas essas tarefas, as que mais me identifiquei, tirando passar café, são as que eu atualmente desempenho: líder e arquiteto. As vezes mais um do que outro dependendo do projeto e da necessidade.
 
-Durante os últimos anos, tenho ganhado experiência com Domain Driven Design, o que tem me ajudado a construir softwares admiravelmente épicos, modéstia à parte.
+Gosto muito das disciplinas de design e arquitetura de aplicações e normalmente exerço forte apoio nessa tarefa com times, outros líderes e arquitetos. Além disso, transito bem entre as áreas técnicas e estratégicas da empresa, facilitando a comunicação com c-levels e product managers a fim de traduzir rapidamente ambições de negócio em estratégias que produzem software escalável e de valor.
 
-Como líder, estou continuamente buscando extrair o melhor que cada pessoa (inclusive eu) tem a oferecer. Atuando lado a lado de meus colegas, viso usar minhas habilidades, não só técnicas mas também aquelas adquiridas através da longa vivência em projetos, para rapidamente identificar variáveis que podem levar a problemas e planejar estratégias para evitá-los (ou ao menos solve-los).
-
-Em minha carreira, na loucura dos projetos e percalços da vida, já atuei nos papéis de desenvolvedor, analista de sistemas, arquiteto de software e líder de equipes. Já fiz bico com tarefas de testador, gerente e, porque não, o cara que faz o café. Em todas essas tarefas, as que mais me identifiquei, tirando passar café, são as que eu atualmente desempenho: líder e arquiteto. As vezes mais um do que outro dependendo do projeto e da necessidade. 
-
-Ocasionalmente ministro treinamentos para colaboradores e parceiros. E também atuo, algumas vezes por ano, como professor na minha empresa em um excelente programa de trainee chamado [Projeto Crescer](http://crescer.cwi.com.br), que é dedicado para estudantes que estão iniciando suas carreiras em TI.
-
-Tecnologia para mim é mais do que apenas um trabalho, é um hobby. Estou constantemente atrás de novos desafios para ocupar meu tempo (como se sobrasse algum). Se você tem um projeto interessante e quer compartilhar, não hesite. Eu pago a pizza ;)
+Adoro discussões filosóficas e profundas sobre tech, se você tem algum assunto que queira discutir relacionado a qualquer tópico que esteja aqui no meu blog ou que viu em alguma das minhas apresentações, não hesite em entrar em contato comigo.
