@@ -10,11 +10,29 @@ image:
 date: 2019-07-11T00:58:56-02:00
 ---
 
+
+Num [post anterior](http://www.fabriciorissetto.com/blog/base-piramide-testes/) falei sobre os benefícios de se ter um compilador e citei algumas questões sobre linguagens estaticas e dinâmicas. Nesse post aqui pretendo aprofundar um pouco mais nessa comparação.
+
+Mas antes de começar tal comparação é muito interessante
+
+
 ## Porque linguagens dinâmicas surgiram
 
+Python is a dynamically typed language, it is also a strongly-typed language. You cannot concatenate a Duck and a float in Python. Javascript is a weakly-typed language that allows 3 + “quacks.”
+
+Good type systems do much more than define records and can also remove boilerplate and defensive coding that even dynamic languages are prone to.
+
+## Type inference
+Type inference removes verbosity C# tem inference em alguns momentos (exemplo uso do var, ou de chamar um método genérico sem ter que dizer o tipo). Mas ainda assim não é tao avançado quando o de F# por exemplo que infere os parametros do método a partir do momento em que ele é chamado.
+
+Generics bring flexibility to static languages. Generics chegou em java em 2004 e em 2005 pro C# (com uma implementação muito mais elegante, sem parameter hiding)
+
+## DDD em linguagens dinâmicas
 A moivação desse post partiu dessa [resposta no stackoverflow](https://stackoverflow.com/a/47558186/890890).
 
+
 Deixei minha resposta lá e aqui aprofundo com um pouco mais de detalhes (e em português).
+
 
 ## Checkagem de tipos
 
@@ -49,5 +67,7 @@ extension functions (praticamente toda linguagem estaticamente tipada, C#, F#, K
 
 method_missing (dynamic object em C#)
 
+https://medium.com/@jessedickey/tdd-is-for-programmers-who-dont-program-46f431f06bbd
+https://medium.com/@jessedickey/to-type-or-not-to-type-that-is-not-the-question-9d89f82349b1
 
-
+Reconheço que minha carreira pode ter criado uma visão limitada baseado nas experiencias pelas quais passei. Não pode ser que eles são burros e eu inteligente. Não me acho alguem inteligente. Nunca fui o cisne dourado da turma. Sou esforçado e bom em detectar padrões. Como detectar padrões se eu não tive oportunidades de ver todos os contextos? Portanto, se você tem uma visão diferente, algo relevante que acha que eu deixei passar, por favor comente e me ajude a evoluir esse pensamento. Só não espere que eu receba seus argumentos pelo simples fato de aceitar. Me comprometo emf azer uma análise crítica e o mais imparcial possível do seu argumento.

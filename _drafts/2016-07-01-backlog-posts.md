@@ -27,3 +27,8 @@ https://www.linkedin.com/feed/update/urn:li:activity:6458954608990519296/
 
 # Base da pirâmide de testes é a compilação
 
+# Leaders eat last
+O piloto é o último a sair do navio. A importância da liderança de quem o lidera é tao grande quanto a da sua. Abandonar seu time pela falha da sua liderança, pelo seu sentimento de insegurança ou desvalorização, é uma das atitudes profissionais mais covardes que um líder de alto desempenho pode tomar. Ao escolher ser líder você abdica do conforto de não tomar decisões, de ter responsabilidadess maiores que você mesmo.
+De ter que absorver preocupações em silêncio, de conviver e lutar com elas.
+
+# Platform
